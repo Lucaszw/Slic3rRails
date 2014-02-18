@@ -1,0 +1,19 @@
+.btn-group
+  %button.btn.btn-success.dropdown-toggle.options{"data-toggle" => "dropdown", type: "button"}
+    Accuracy Options
+    %span.caret
+  %ul.dropdown-menu.wide{role: "menu"}
+    = f.label :layer_height
+    (mm) :
+    = f.number_field :layer_height , :class => "form-control" 
+    %br
+    = f.label :first_layer_height
+    (mm) :
+    = f.number_field :first_layer_height , :class => "form-control"
+    - # = f.select :first_layer_height_units, [['%' , :percent] , ['mm', :height]] , :class => "form-control"
+    %br
+    Infill every N layers  :
+    = f.number_field :infill_every_layers , :class => "form-control"
+    %br
+    Solid infill every N layers  :
+    = f.number_field :solid_infill_every_layers , :class => "form-control"

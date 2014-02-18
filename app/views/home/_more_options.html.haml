@@ -1,0 +1,12 @@
+.btn-group
+  %button.btn.btn-info.dropdown-toggle.options{"data-toggle" => "dropdown", type: "button"}
+    More
+    %span.caret
+  .dropdown-menu.wide{role: "menu"}
+    = f.label :resolution
+    (mm) :
+    =f.number_field :resolution , :class => "form-control"
+    %h3 Flow options (manual):
+    Coming soon....
+    %h3 Multiple extruder options:
+    Coming soon...

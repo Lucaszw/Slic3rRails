@@ -1,0 +1,73 @@
+.btn-group
+  %button.btn.btn-warning.dropdown-toggle.options{"data-toggle" => "dropdown", type: "button"}
+    Printer Options
+    %span.caret
+  .dropdown-menu.wide{:role => "menu"}
+    
+    #collapse_content
+      .row
+        .col-lg-12
+          .input-group
+            %span.input-group-addon
+              = f.label :nozzle_diameter
+              (mm) :
+            =f.number_field :nozzle_diameter  , :class => "form-control", :placeholder => "0.5"
+      %br
+      .border_box
+        %h5
+          = f.label :center_of_print
+          (mm) :
+        .row{:style => "padding-left:5px;padding-right:2px;"}
+          .col-lg-5
+            .input-group
+              %span.input-group-addon
+                x :
+              = f.number_field :center_of_print_x  , :class => "form-control", :placeholder => "100"
+          .col-lg-5
+            .input-group
+              %span.input-group-addon
+                y :
+              = f.number_field :center_of_print_y  , :class => "form-control", :placeholder => "100"
+      %br
+      .border_box
+        .row
+          .col-lg-6
+            = f.label :gcode_flavor
+            \:
+          .col-lg-6
+            =f.select :gcode_flavor, options_for_select([['reprap', :reprap], ['teacup', :teacup], ['makerbot', :makerbot],['  sailfish', :sailfish], ['mach3', :mach3],['no-extrusion', :no_extrusion]  ] ), :class => "form-control"
+
+
+      %br
+      .border_box.inline
+        .left
+          = f.label :use_relative_e_distances
+          ? :
+        .Switch.Round.Off{:href => "use_relative_e_distances", :style => "float:left;margin-left:10px;margin-top:3px;"}
+          .Toggle  
+        =f.check_box :use_relative_e_distances, {:style => "display:none", :id => "use_relative_e_distances"}, "yes", "no"
+  
+
+      %br
+      .border_box.inline
+        .left
+          Use G2/G3 commands for native arcs ? :
+        .Switch.Round.Off{:href => "gcode_arcs", :style => "float:left;margin-left:10px;margin-top:3px;"}
+          .Toggle  
+        = f.check_box :gcode_arcs, {:style => "display:none", :id => "gcode_arcs"}, "yes", "no"
+      %br
+      .border_box.inline
+        .left
+          Use G0 commands for retraction ? :
+        .Switch.Round.Off{:href => "g0", :style => "float:left;margin-left:10px;margin-top:3px;"}
+          .Toggle  
+        =f.check_box :g0, {:style => "display:none", :id => "g0"}, "yes", "no"
+      %br
+
+      .row
+        .col-lg-12
+          .input-group
+            %span.input-group-addon
+              = f.label :vibration_limit
+              (Hz) :
+            =f.number_field :vibration_limit , :class => "form-control", :placeholder => "0"

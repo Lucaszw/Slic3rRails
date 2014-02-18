@@ -1,0 +1,25 @@
+.btn-group
+  %button.btn.btn-success.dropdown-toggle.options{"data-toggle" => "dropdown", type: "button"}
+    Skirt Options
+    %span.caret
+  .dropdown-menu.wide{role: "menu"}
+    = f.label :number_of_skirts
+    \:
+    \#{f.number_field :skirts , :class => "form-control"}
+    %br/
+    = f.label :skirt_distance
+    (mm) :
+    \#{f.number_field :skirt_distance , :class => "form-control"}
+    %br/
+    = f.label :skirt_height
+    (in layers) :
+    \#{f.number_field :skirt_height , :class => "form-control"}
+    %br/
+    = f.label :min_skirt_length
+    (mm) :
+    \#{f.number_field :min_skirt_length , :class => "form-control"}
+    %br/
+    = f.label :brim_width
+    (mm) :
+    \#{f.number_field :brim_width , :class => "form-control"}
+    %br/

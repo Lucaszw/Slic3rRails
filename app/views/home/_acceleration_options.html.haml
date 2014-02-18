@@ -1,0 +1,21 @@
+.btn-group
+  %button.btn.btn-primary.dropdown-toggle.options{"data-toggle" => "dropdown", type: "button"}
+    Acceleration Options
+    %span.caret
+  .dropdown-menu.wide{role: "menu"}
+    = f.label :perimeter_acceleration
+    (mm/s ^2) :
+    \#{f.number_field :perimeter_acceleration , :class => "form-control"}
+    %br/
+    = f.label :infill_acceleration
+    (mm/s ^2) :
+    \#{f.number_field :infill_acceleration , :class => "form-control"}
+    %br/
+    = f.label :bridge_acceleration
+    (mm/s ^2) :
+    \#{f.number_field :bridge_acceleration , :class => "form-control"}
+    %br/
+    = f.label :default_acceleration
+    (mm/s ^2) :
+    \#{f.number_field :default_acceleration , :class => "form-control"}
+          

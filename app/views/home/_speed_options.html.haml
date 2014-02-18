@@ -1,0 +1,57 @@
+.btn-group
+  %button.btn.btn-danger.dropdown-toggle.options{"data-toggle" => "dropdown", type: "button"}
+    Speed Options
+    %span.caret
+  .dropdown-menu.wide{role: "menu"}
+    = f.label :travel_speed
+    (mm/s) :
+    = f.number_field :travel_speed , :class => "form-control"
+    = f.label :perimeter_speed
+    (mm/s) :
+    \#{f.number_field :perimeter_speed , :class => "form-control"}
+    %br/
+    = f.label :small_perimeter_speed
+    (mm/s or %) :
+    = f.number_field :small_perimeter_speed , :class => "form-control"
+    -# f.select :small_perimeter_speed_units, [['%', :percent], ['mm/s', :velocity]] , :class => "form-control"
+    %br/
+    = f.label :external_perimeter_speed
+    (mm/s or %) :
+    = f.number_field :external_perimeter_speed , :class => "form-control"
+    - # = f.select :external_perimeter_speed , [['%', :percent], ['mm/s', :velocity]] , :class => "form-control"
+    %br/
+    = f.label :infill_speed
+    (mm/s or %) :
+    = f.number_field :infill_speed
+    - # = f.select :infill_speed_units, [['%', :percent], ['mm/s', :velocity]] , :class =>  "form-control"
+    %br
+    = f.label :solid_infill_speed
+    (mm/s or %) :
+    = f.number_field :solid_infill_speed
+    - # = f.select :solid_infill_speed_units, [['%', :percent], ['mm/s', :veloc ]], :class => "form-control"
+    %br/
+    = f.label :top_solid_infill_speed
+    (mm/s or %) :
+    = f.number_field :top_solid_infill_speed , :class => "form-control"
+    - # = f.select :top_solid_infill_speed_units, [['%', :percent], ['mm/s', :velocity]] , :class => "form-control"
+    %br/
+    = f.label :support_material_speed
+    (mm/s) :
+    \#{f.number_field :support_material_speed , :class => "form-control"}
+    %br/
+    = f.label :support_material_speed
+    (mm/s) :
+    \#{f.number_field :support_material_speed , :class => "form-control"}
+    %br/
+    = f.label :bridge_speed
+    (mm/s) :
+    \#{f.number_field :bridge_speed , :class => "form-control"}
+    %br/
+    = f.label :gap_fill_speed
+    (mm/s) :
+    \#{f.number_field :gap_fill_speed , :class => "form-control"}
+    %br/
+    = f.label :first_layer_speed
+    (%) :
+    \#{f.number_field :first_layer_speed , :class => "form-control"}
+     

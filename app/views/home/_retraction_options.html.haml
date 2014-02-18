@@ -1,0 +1,42 @@
+.btn-group
+  %button.btn.btn-danger.dropdown-toggle.options{"data-toggle" => "dropdown", type: "  button"}
+    Retraction Options
+    %span.caret
+  .dropdown-menu.wide{role: "menu"}      
+    = f.label :retract_length
+    (mm) :
+    \#{f.number_field :retract_length , :class => "form-control"}
+    %br/
+    = f.label :retract_speed
+    (mm/s) :
+    \#{f.number_field :retract_speed , :class => "form-control"}
+    %br/
+    = f.label :retract_restart_extra
+    (mm) :
+    \#{f.number_field :retract_restart_extra , :class => "form-control"}
+    %br/
+    = f.label :retract_before_travel
+    (mm) :
+    \#{f.number_field :retract_before_travel , :class => "form-control"}
+    %br/
+    = f.label :retract_lift
+    (mm) :
+    \#{f.number_field :retract_lift , :class => "form-control"}
+    %br/
+    = f.label :retract_layer_change
+    ? :
+    = f.check_box :retract_layer_change , {:class => "form-control"}, "yes", "no"
+    %br/
+    = f.label :wipe
+    ? :
+    = f.check_box :wipe , {:class => "form-control"}, "yes", "no"
+    %div{"data-collapse" => ""}
+      %h3 Retraction Options for multi-extruder setups:
+      = f.label :retract_length_toolchange
+      (mm) :
+      = f.number_field :retract_length_toolchange ,:class => "form-control"
+      %br/
+      = f.label :retract_restart_extra_toolchange
+      (mm) :
+      = f.number_field :retract_restart_extra_toolchange , :class => "form-control"
+      %br/  

@@ -1,0 +1,29 @@
+.btn-group
+  %button.btn.btn-info.dropdown-toggle.options{"data-toggle" => "dropdown", type: "button"}
+    Filament Options
+    %span.caret
+  .dropdown-menu.wide{role: "menu"}
+    = f.label :filament_diameter, :placeholder => "3"
+    (mm) :
+    = f.number_field :filament_diameter, :class => "form-control"
+    %br/
+    = f.label :extrusion_multiplier
+    (amount of plastic extruded) :
+    = f.number_field :extrusion_multiplier, :class => "form-control"
+    %br/
+    = f.label :temperature
+    (Celcius) :
+    = f.number_field :temperature, :class => "form-control"
+    %br/
+    = f.label :first_layer_temperature
+    (Celcius) :
+    = f.number_field :first_layer_temperature , :class => "form-control"
+    %br/
+    = f.label :bed_temperature
+    (Celcius) :
+    = f.number_field :bed_temperature , :class => "form-control"
+    %br/
+    = f.label :first_layer_bed_temperature
+    (Celcius) :
+    = f.number_field :first_layer_bed_temperature , :class => "form-control"
+    %br/

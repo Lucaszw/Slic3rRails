@@ -1,0 +1,85 @@
+// Place all the styles related to the home controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+@import "bootstrap"
+.border_box.inline
+  display: inline-block
+  width: 100%
+.left
+  float: left
+.wide
+  width : 500px
+  padding : 10px
+.options
+  width : 200px
+#submit_button
+  border-color : #cc3d40
+  color : #cc3d40
+  box-shadow : 1px solid 
+
+.Switch
+  position: relative
+  // display: inline-block
+  width: 20px
+  font-size: 1.6em
+  font-weight: bold
+  color: #ccc
+  text-shadow: 0px 1px 1px rgba(255, 255, 255, 0.8)
+  height: 18px
+  padding: 6px 6px 5px 6px
+  border: 1px solid #ccc
+  border: 1px solid rgba(0, 0, 0, 0.2)
+  border-radius: 4px
+  background: #ececec
+  cursor: pointer
+
+body.IE7.Switch
+  width: 78px
+
+.Switch
+  span
+    // display: inline-block
+    width: 35px
+    &.On
+      color: #4fac4d
+  .Toggle
+    position: absolute
+    top: 1px
+    width: 37px
+    height: 25px
+    border: 1px solid #ccc
+    border: 1px solid rgba(0, 0, 0, 0.3)
+    border-radius: 4px
+    background: #fff
+    background: -moz-linear-gradient(top, #ececec 0%, white 100%)
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #ececec), color-stop(100%, white))
+    background: -webkit-linear-gradient(top, #ececec 0%, white 100%)
+    background: -o-linear-gradient(top, #ececec 0%, white 100%)
+    background: -ms-linear-gradient(top, #ececec 0%, white 100%)
+    background: linear-gradient(top, #ececec 0%, white 100%)
+    z-index: 999
+    -webkit-transition: all 0.15s ease-in-out
+    -moz-transition: all 0.15s ease-in-out
+    -o-transition: all 0.15s ease-in-out
+    -ms-transition: all 0.15s ease-in-out
+  &.On .Toggle
+    left: 2%
+  &.Off .Toggle
+    left: 54%
+  &.Round
+    padding: 0px 20px
+    border-radius: 40px
+
+body.IE7 .Switch.Round
+  width: 1px
+
+.Switch.Round
+  .Toggle
+    border-radius: 40px
+    width: 14px
+    height: 14px
+  &.On .Toggle
+    left: 3%
+    background: #4fac4d
+  &.Off .Toggle
+    left: 58%

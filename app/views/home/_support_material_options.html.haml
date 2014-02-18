@@ -1,0 +1,42 @@
+.btn-group
+  %button.btn.btn-info.dropdown-toggle.options{"data-toggle" => "dropdown", type: "button"}
+    Support Material Options
+    %span.caret
+  %ul.dropdown-menu.wide{role: "menu"}
+    = f.label :generate_support_material
+    ? :
+    = f.check_box :support_material , { :class => "form-control" }, "yes", "no"
+    %br/
+    %br/
+    = f.label :overhang_threshold_angle
+    (degrees) :
+    \#{f.number_field :support_material_threshold , :class => "form-control"}
+    %br/
+    = f.label :support_material_pattern
+    \:
+    = f.select :support_material_pattern , [ ['Rectilinear', :rectilinear],['Honeycomb', :honeycomb],['Rectilinear Grid', :rectilineargrid ]  ] , :class => "form-control"
+    %br/
+    = f.label :support_material_spacing
+    (mm) :
+    \#{f.number_field :support_material_spacing , :class => "form-control"}
+    %br/
+    = f.label :support_material_angle
+    (degrees) :
+    \#{f.number_field :support_material_angle , :class => "form-control"}
+    %br/
+    = f.label :support_material_interface_layers
+    \:
+    \#{f.number_field :support_material_interface_layers , :class => "form-control"}
+    %br/
+    = f.label :support_material_interface_spacing
+    \:
+    \#{f.number_field :support_material_interface_spacing , :class => "form-control"}
+    %br/
+    = f.label :raft_layers
+    \:
+    \#{f.number_field :raft_layers , :class => "form-control"}
+    %br/
+    = f.label :support_material_enforce_layers
+    \:
+    \#{f.number_field :support_material_enforce_layers , :class => "form-control"}
+    %br/

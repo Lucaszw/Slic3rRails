@@ -1,0 +1,41 @@
+.btn-group
+  %button.btn.btn-primary.dropdown-toggle.options{"data-toggle" => "dropdown", type: "button"}
+    Cooling Options
+    %span.caret
+  .dropdown-menu.wide{role: "menu"}
+    = f.label :cooling
+    ? :
+    = f.check_box :cooling , {:class => "form-control"}, "yes", "no"
+    %br/
+    = f.label :min_fan_speed
+    (%) :
+    \#{f.number_field :min_fan_speed , :class => "form-control"}
+    %br/
+    = f.label :max_fan_speed
+    (%) :
+    \#{f.number_field :max_fan_speed , :class => "form-control"}
+    %br/
+    = f.label :bridge_fan_speed
+    (%) :
+    \#{f.number_field :bridge_fan_speed , :class => "form-control"}
+    %br/
+    = f.label :fan_below_layer_time
+    (seconds) :
+    \#{f.number_field :fan_below_layer_time , :class => "form-control"}
+    %br/
+    = f.label :slowdown_below_layer_time
+    (seconds) :
+    \#{f.number_field :slowdown_below_layer_time , :class => "form-control"}
+    %br/
+    = f.label :min_print_speed
+    (mm/s) :
+    \#{f.number_field :min_print_speed , :class => "form-control"}
+    %br/
+    = f.label :disable_fan_first_N_layers
+    \:
+    \#{f.number_field :disable_fan_first_layers , :class => "form-control"}
+    %br/
+    = f.label :fan_always_on
+    \:
+    = f.check_box :fan_always_on , {:class => "form-control"}, "yes", "no"
+   

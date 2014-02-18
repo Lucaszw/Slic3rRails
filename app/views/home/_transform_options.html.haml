@@ -1,0 +1,29 @@
+.btn-group
+  %button.btn.btn-warning.dropdown-toggle.options{"data-toggle" => "dropdown", type: "button"}
+    Transform Options
+    %span.caret
+  .dropdown-menu.wide{role: "menu"}
+    = f.label :scale_factor
+    (ex. 1x, 2x, ...) :
+    \#{f.number_field :scale , :class => "form-control"}
+    %br/
+    = f.label :rotate
+    (angle) :
+    \#{f.number_field :rotate , :class => "form-control"}
+    %br/
+    = f.label :duplicate
+    (number of times, arranged automatically) :
+    \#{f.number_field :duplicate , :class => "form-control"}
+    %br/
+    = f.label :bed_size
+    (used only with auto arrange, mm) :
+    \#{f.number_field :bed_size , :class => "form-control"}
+    %br/
+    = f.label :duplicate_grid
+    (row, columns) :
+    \#{f.number_field :duplicate_grid , :class => "form-control"}
+    %br/
+    = f.label :duplicate_distance
+    (row, columns) :
+    \#{f.number_field :duplicate_distance , :class => "form-control"}
+    %br/

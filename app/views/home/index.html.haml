@@ -1,0 +1,48 @@
+%script{:src => "//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"}
+= javascript_include_tag "home"
+:sass
+  .border_box
+    background-color : #fefefe
+    border-radius : 5px
+    border : 1px solid #c2c2c2
+    padding : 10px
+
+
+=form_for :generator , :url => home_submit_path , :html => {:id => "generator"} do |f|
+  %h2{:style => "color:red;font-weight:500"} Values left blank are set to their default...
+
+  .col-lg-8
+    %div
+      / Printer Options
+      = render :partial => "printer_options", :locals => { :f => f }
+      / Filament Options
+      = render :partial => "filament_options", :locals => { :f => f }
+      / Speed Options    
+      = render :partial => "speed_options", :locals => { :f => f }
+    %br
+    %div
+      / Acceleration Options    
+      = render :partial => "acceleration_options", :locals => { :f => f }
+      / Accuracy Options
+      = render :partial => "accuracy_options", :locals => { :f => f }
+      / Print Options
+      = render :partial => "print_options", :locals => { :f => f }
+    %br
+    %div
+      / Support Material Options
+      = render :partial => "support_material_options", :locals => { :f => f }
+      / Retraction Options
+      = render :partial => "retraction_options", :locals => { :f => f }  
+      / Cooling Options
+      = render :partial => "cooling_options", :locals => { :f => f } 
+    %br
+    %div
+      / Skirt Options
+      = render :partial => "skirt_options", :locals => { :f => f } 
+      / Transform Options
+      = render :partial => "transform_options", :locals => { :f => f } 
+      / More
+      = render :partial => "more_options", :locals => { :f => f } 
+    %button.download-itunes{:onclick => " $('#generator').submit();" , :type => "button", :class => "btn btn-default btn-lg", :style=> "width:200px;height:50px;"}
+      %span.glyphicon.glyphicon-saved
+      Submit

@@ -1,0 +1,74 @@
+.btn-group
+  %button.btn.btn-warning.dropdown-toggle.options{"data-toggle" => "dropdown", type: "button"}
+    Print Options
+    %span.caret
+  %ul.dropdown-menu.wide{role: "menu"}
+    Number of Perimeters :
+    \#{f.number_field :perimeters , :class => "form-control"}
+    %br/
+    Number of Solid Layers for top surfaces :
+    \#{f.number_field :top_solid_layers , :class => "form-control"}
+    %br/
+    Number of Solid Layers for bottom surfaces :
+    \#{f.number_field :bottom_solid_layers , :class => "form-control"}
+    %br/
+    Number of Solid Layers (overides top and bottom ) :
+    \#{f.number_field :solid_layers , :class => "form-control"}
+    %br/
+    = f.label :fill_density
+    \:
+    \#{f.number_field :fill_density , :class => "form-control"}
+    %br/
+    = f.label :fill_angle
+    (degrees) :
+    \#{f.number_field :fill_angle , :class => "form-control"}
+    %br/
+    = f.label :fill_pattern
+    (degrees) :
+    = f.select :fill_pattern, [['Line', :line], ['Rectilinear', :rectilinear], ['Concentric', :concentric],['Honeycomb', :honeycomb], ['Hilbert Curve', :hilbertcurve],['Archimedean Chords', :archimedeanchords],['Octagram Spiral', :octagramspiral]  ] , :class => "form-control"
+    %br/
+    = f.label :solid_fill_pattern
+    (degrees) :
+    = f.select :solid_fill_pattern, [['Rectilinear', :rectilinear], ['Concentric', :concentric],['Hilbert Curve', :hilbertcurve],['Archimedean Chords', :archimedeanchords],['Octagram Spiral', :octagramspiral]  ] , :class => "form-control"
+    %br/
+    / Add Custom G code options Here later
+    = f.label :extra_perimeters
+    ? :
+    = f.check_box :extra_perimeters , {:class => "form-control"}, "yes", "no"
+    %br/
+    %br/
+    = f.label :random_starting_point
+    ? :
+    = f.check_box :randomize_start , {:class => "form-control"}, "yes", "no"
+    %br/
+    %br/
+    = f.label :avoid_crossing_perimeters
+    ? :
+    = f.check_box :avoid_crossing_perimeters , {:class => "form-control"}, "yes", "no"
+    %br/
+    %br/
+    = f.label :external_perimeters_first
+    ? :
+    = f.check_box :external_perimeters_first , {:class => "form-control"}, "yes", "no"
+    %br/
+    %br/
+    = f.label :only_retract_when_crossing_perimeters
+    ? :
+    = f.check_box :only_retract_when_crossing_perimeters , {:class => "form-control"}, "yes", "no"
+    %br/
+    %br/
+    = f.label :solid_infill_below_area
+    (mm^2) :
+    = f.number_field :solid_infill_below_area , :class => "form-control"
+    %br/
+    %br/
+    = f.label :infill_only_where_needed
+    ? :
+    = f.check_box :infill_only_where_needed , {:class => "form-control"}, "yes", "no"
+    %br/
+    %br/
+    = f.label :infill_first
+    ? :
+    = f.check_box :infill_first , {:class => "form-control"}, "yes", "no"
+    %br/
+    %br
